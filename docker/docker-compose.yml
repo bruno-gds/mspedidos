@@ -1,14 +1,14 @@
 version: '3.7'
 
 services:
-  mongodb-tc:
+  fiapshop-mspedidos:
     image: mongodb/mongodb-community-server:latest
-    container_name: mongodb-tc
+    container_name: fiapshop-mspedidos
     environment:
-      MONGO_INITDB_DATABASE: parquimetro
-#      MONGO_INITDB_ROOT_USERNAME: bruno
-#      MONGO_INITDB_ROOT_PASSWORD: bruno
+      MONGO_INITDB_DATABASE: fiapshop1
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
     ports:
-      - 27017:27017
+      - "27017:27017"
     volumes:
-      - ./db-sgp:/data/db
+      - ./db-data:/data/db
