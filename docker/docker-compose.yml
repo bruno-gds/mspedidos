@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  mongodb-tc:
+    image: mongodb/mongodb-community-server:latest
+    container_name: mongodb-tc
+    environment:
+      MONGO_INITDB_DATABASE: parquimetro
+#      MONGO_INITDB_ROOT_USERNAME: bruno
+#      MONGO_INITDB_ROOT_PASSWORD: bruno
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db-sgp:/data/db
