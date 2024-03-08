@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
@@ -33,5 +34,10 @@ public class PedidoController {
             return new ResponseEntity<>("Um ou mais produtos não estão disponíveis.",
                     HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @GetMapping
+    public List<Pedido> listarPedidos() {
+        return pedidoService.listarPedidos();
     }
 }
