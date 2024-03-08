@@ -64,7 +64,7 @@ public class PedidoService {
 
                 try {
                     JsonNode produtoJson = objectMapper.readTree(response.getBody());
-                    int quantidadeEstoque = produtoJson.get("quantidadeEstoque").asInt();
+                    int quantidadeEstoque = produtoJson.get("quantidade_estoque").asInt();
 
                     if (quantidadeEstoque < quantidade) {
                         return false;
